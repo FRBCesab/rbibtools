@@ -19,6 +19,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     bib2df,
+    stringi,
     writexl
 Suggests: 
     knitr,

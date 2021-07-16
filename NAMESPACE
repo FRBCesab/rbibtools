@@ -2,3 +2,4 @@
 
 export(read_bibtex)
 export(replace_tex_tags)
+importFrom(stringi,stri_unescape_unicode)

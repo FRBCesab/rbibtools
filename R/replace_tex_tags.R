@@ -8,6 +8,7 @@
 #'
 #' @return A vector of characters.
 #'
+#' @importFrom stringi stri_unescape_unicode
 #' @export
 #'
 #' @examples
@@ -29,71 +30,82 @@ replace_tex_tags <- function(x) {
     stop("Argument 'x' must be a character.")
   }
   
-  x <- gsub("\\{\\\\'\\{a\\}\\}", "á", x)
-  x <- gsub("\\{\\\\'\\{e\\}\\}", "é", x)
-  x <- gsub("\\{\\\\'\\{e\\}", "é", x)
-  x <- gsub("\\{\\\\'\\{i\\}\\}", "í", x)
-  x <- gsub("\\{\\\\'\\{o\\}\\}", "ó", x)
-  x <- gsub("\\{\\\\'\\{u\\}\\}", "ú", x)
+  x <- gsub("\\{\\\\'\\{a\\}\\}", stri_unescape_unicode("\\u00e1"), x)
+  x <- gsub("\\{\\\\'\\{e\\}\\}", stri_unescape_unicode("\\u00e9"), x)
+  x <- gsub("\\{\\\\'\\{i\\}\\}", stri_unescape_unicode("\\u00ed"), x)
+  x <- gsub("\\{\\\\'\\{o\\}\\}", stri_unescape_unicode("\\u00f3"), x)
+  x <- gsub("\\{\\\\'\\{u\\}\\}", stri_unescape_unicode("\\u00fa"), x)
   
-  x <- gsub("\\{\\\\`\\{a\\}\\}", "à", x)
-  x <- gsub("\\{\\\\`\\{e\\}\\}", "è", x)
-  x <- gsub("\\{\\\\`\\{i\\}\\}", "ì", x)
-  x <- gsub("\\{\\\\`\\{o\\}\\}", "ò", x)
-  x <- gsub("\\{\\\\`\\{u\\}\\}", "ù", x)
+  x <- gsub("\\{\\\\`\\{a\\}\\}", stri_unescape_unicode("\\u00e0"), x)
+  x <- gsub("\\{\\\\`\\{e\\}\\}", stri_unescape_unicode("\\u00e8"), x)
+  x <- gsub("\\{\\\\`\\{i\\}\\}", stri_unescape_unicode("\\u00ec"), x)
+  x <- gsub("\\{\\\\`\\{o\\}\\}", stri_unescape_unicode("\\u00f2"), x)
+  x <- gsub("\\{\\\\`\\{u\\}\\}", stri_unescape_unicode("\\u00f9"), x)
   
-  x <- gsub("\\{\\\\\\^\\{a\\}\\}", "â", x)
-  x <- gsub("\\{\\\\\\^\\{e\\}\\}", "ê", x)
-  x <- gsub("\\{\\\\\\^\\{i\\}\\}", "î", x)
-  x <- gsub("\\{\\\\\\^\\{o\\}\\}", "ô", x)
-  x <- gsub("\\{\\\\\\^\\{u\\}\\}", "û", x)
+  x <- gsub("\\{\\\\\\^\\{a\\}\\}", stri_unescape_unicode("\\u00e2"), x)
+  x <- gsub("\\{\\\\\\^\\{e\\}\\}", stri_unescape_unicode("\\u00ea"), x)
+  x <- gsub("\\{\\\\\\^\\{i\\}\\}", stri_unescape_unicode("\\u00ee"), x)
+  x <- gsub("\\{\\\\\\^\\{o\\}\\}", stri_unescape_unicode("\\u00f4"), x)
+  x <- gsub("\\{\\\\\\^\\{u\\}\\}", stri_unescape_unicode("\\u00fb"), x)
   
-  x <- gsub("\\{\\\\\"\\{a\\}\\}", "ä", x)
-  x <- gsub("\\{\\\\\"\\{e\\}\\}", "ë", x)
-  x <- gsub("\\{\\\\\"\\{i\\}\\}", "ï", x)
-  x <- gsub("\\{\\\\\"\\{o\\}\\}", "ö", x)
-  x <- gsub("\\{\\\\\"\\{u\\}\\}", "ü", x)
+  x <- gsub("\\{\\\\\"\\{a\\}\\}", stri_unescape_unicode("\\u00e4"), x)
+  x <- gsub("\\{\\\\\"\\{e\\}\\}", stri_unescape_unicode("\\u00eb"), x)
+  x <- gsub("\\{\\\\\"\\{i\\}\\}", stri_unescape_unicode("\\u00ef"), x)
+  x <- gsub("\\{\\\\\"\\{o\\}\\}", stri_unescape_unicode("\\u00f6"), x)
+  x <- gsub("\\{\\\\\"\\{u\\}\\}", stri_unescape_unicode("\\u00fc"), x)
   
-  x <- gsub("\\{\\\\c\\{c\\}\\}", "ç", x)
-  x <- gsub("\\{\\\\~\\{n\\}\\}", "ñ", x)
+  x <- gsub("\\{\\\\c\\{c\\}\\}", stri_unescape_unicode("\\u00e7"), x)
+  x <- gsub("\\{\\\\~\\{n\\}\\}", stri_unescape_unicode("\\u00f1"), x)
   
   x <- gsub("\\{\\\\ae\\}", "ae", x)
   x <- gsub("\\{\\\\oe\\}", "oe", x)
   
-  x <- gsub("\\{\\\\'\\{A\\}\\}", "Á", x)
-  x <- gsub("\\{\\\\'\\{E\\}\\}", "É", x)
-  x <- gsub("\\{\\\\'\\{I\\}\\}", "Í", x)
-  x <- gsub("\\{\\\\'\\{O\\}\\}", "Ó", x)
-  x <- gsub("\\{\\\\'\\{U\\}\\}", "Ú", x)
+  x <- gsub("\\{\\\\aa\\}", stri_unescape_unicode("\\u00e5"), x)
+  x <- gsub("\\{\\\\AA\\}", stri_unescape_unicode("\\u00c5"), x)
+  x <- gsub("\\{\\\\o\\}", stri_unescape_unicode("\\u00f8"), x)
+  x <- gsub("\\{\\\\O\\}", stri_unescape_unicode("\\u00d8"), x)
   
-  x <- gsub("\\{\\\\`\\{A\\}\\}", "À", x)
-  x <- gsub("\\{\\\\`\\{E\\}\\}", "È", x)
-  x <- gsub("\\{\\\\`\\{I\\}\\}", "Ì", x)
-  x <- gsub("\\{\\\\`\\{O\\}\\}", "Ò", x)
-  x <- gsub("\\{\\\\`\\{U\\}\\}", "Ù", x)
+  x <- gsub("\\{\\\\'\\{A\\}\\}", stri_unescape_unicode("\\u00c1"), x)
+  x <- gsub("\\{\\\\'\\{E\\}\\}", stri_unescape_unicode("\\u00c9"), x)
+  x <- gsub("\\{\\\\'\\{I\\}\\}", stri_unescape_unicode("\\u00cd"), x)
+  x <- gsub("\\{\\\\'\\{O\\}\\}", stri_unescape_unicode("\\u00d3"), x)
+  x <- gsub("\\{\\\\'\\{U\\}\\}", stri_unescape_unicode("\\u00da"), x)
   
-  x <- gsub("\\{\\\\\\^\\{A\\}\\}", "Â", x)
-  x <- gsub("\\{\\\\\\^\\{E\\}\\}", "Ê", x)
-  x <- gsub("\\{\\\\\\^\\{I\\}\\}", "Î", x)
-  x <- gsub("\\{\\\\\\^\\{O\\}\\}", "Ô", x)
-  x <- gsub("\\{\\\\\\^\\{U\\}\\}", "Û", x)
+  x <- gsub("\\{\\\\`\\{A\\}\\}", stri_unescape_unicode("\\u00c0"), x)
+  x <- gsub("\\{\\\\`\\{E\\}\\}", stri_unescape_unicode("\\u00c8"), x)
+  x <- gsub("\\{\\\\`\\{I\\}\\}", stri_unescape_unicode("\\u00cc"), x)
+  x <- gsub("\\{\\\\`\\{O\\}\\}", stri_unescape_unicode("\\u00d2"), x)
+  x <- gsub("\\{\\\\`\\{U\\}\\}", stri_unescape_unicode("\\u00d9"), x)
   
-  x <- gsub("\\{\\\\\"\\{A\\}\\}", "Ä", x)
-  x <- gsub("\\{\\\\\"\\{E\\}\\}", "Ë", x)
-  x <- gsub("\\{\\\\\"\\{I\\}\\}", "Ï", x)
-  x <- gsub("\\{\\\\\"\\{O\\}\\}", "Ö", x)
-  x <- gsub("\\{\\\\\"\\{U\\}\\}", "Ü", x)
+  x <- gsub("\\{\\\\\\^\\{A\\}\\}", stri_unescape_unicode("\\u00c2"), x)
+  x <- gsub("\\{\\\\\\^\\{E\\}\\}", stri_unescape_unicode("\\u00ca"), x)
+  x <- gsub("\\{\\\\\\^\\{I\\}\\}", stri_unescape_unicode("\\u00ce"), x)
+  x <- gsub("\\{\\\\\\^\\{O\\}\\}", stri_unescape_unicode("\\u00d4"), x)
+  x <- gsub("\\{\\\\\\^\\{U\\}\\}", stri_unescape_unicode("\\u00db"), x)
   
-  x <- gsub("\\{\\\\C\\{C\\}\\}", "Ç", x)
-  x <- gsub("\\{\\\\~\\{N\\}\\}", "Ñ", x)
+  x <- gsub("\\{\\\\\"\\{A\\}\\}", stri_unescape_unicode("\\u00c4"), x)
+  x <- gsub("\\{\\\\\"\\{E\\}\\}", stri_unescape_unicode("\\u00cb"), x)
+  x <- gsub("\\{\\\\\"\\{I\\}\\}", stri_unescape_unicode("\\u00cf"), x)
+  x <- gsub("\\{\\\\\"\\{O\\}\\}", stri_unescape_unicode("\\u00d6"), x)
+  x <- gsub("\\{\\\\\"\\{U\\}\\}", stri_unescape_unicode("\\u00dc"), x)
+  
+  x <- gsub("\\{\\\\C\\{C\\}\\}", stri_unescape_unicode("\\u00c7"), x)
+  x <- gsub("\\{\\\\~\\{N\\}\\}", stri_unescape_unicode("\\u00d1"), x)
   
   x <- gsub("\\{\\\\AE\\}", "AE", x)
   x <- gsub("\\{\\\\OE\\}", "OE", x)
   
   x <- gsub("\\{\\\\&\\}", "&", x)
+  x <- gsub("\\{\\\\%\\}", "%", x)
+  x <- gsub("\\{\\\\\\$\\}", "$", x)
+  x <- gsub("\\{\\\\_\\}", "_", x)
   
-  x <- gsub("^\\{", "", x)
-  x <- gsub("\\},", ",", x)
+  x <- gsub("\\{\\\\ldots\\}", "...", x)
+  x <- gsub("\\{\\\\~\\{\\}\\}", "~", x)
+  
+  x <- gsub("\\{\\\\textless\\}", "<", x)
+  x <- gsub("\\{\\\\textgreater\\}", ">", x)
+  x <- gsub("\\{\\\\textcopyright\\}", "\\u00a9", x)
   
   x
 }
