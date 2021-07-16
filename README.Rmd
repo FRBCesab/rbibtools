@@ -20,8 +20,8 @@ rmendeley <img src="man/figures/hexsticker.png" height="120" align="right"/>
 =========================================================
 
 <!-- badges: start -->
-[![Website deployment](https://github.com/ahasverus/rmendeley/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/ahasverus/rmendeley/actions/workflows/pkgdown.yaml)
-[![R CMD Check](https://github.com/ahasverus/rmendeley/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ahasverus/rmendeley/actions/workflows/R-CMD-check.yaml)
+[![R CMD Check](https://github.com/frbcesab/rmendeley/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/rmendeley/actions/workflows/R-CMD-check.yaml)
+[![Website deployment](https://github.com/frbcesab/rmendeley/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/rmendeley/actions/workflows/pkgdown.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/rmendeley)](https://CRAN.R-project.org/package=rmendeley)
 [![License: GPL (>= 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 [![LifeCycle](man/figures/lifecycle/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
