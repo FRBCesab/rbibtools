@@ -146,7 +146,6 @@ read_bibtex <- function(path = ".",
   }
   
   
-  
   tags <- tolower(tags)
   
   if (!("category" %in% tags)) {
@@ -171,31 +170,12 @@ read_bibtex <- function(path = ".",
     colnames(tab) <- tolower(colnames(tab))
     
     
-    ## Remove LaTeX Tags ----
-    
-    tags_names <- c("author", "editor")
-    
-    for (tag in tags_names) {
-      tab[tag][[1]] <- lapply(tab[ , tag], replace_tex_tags)
-      tab[tag][[1]] <- unlist(lapply(tab[ , tag], function(x) {
-        paste0(unlist(x), collapse = " ; ")
-      }))
-    }
-    
-    
-    tags_texts <- c("title", "booktitle", "journal", "publisher")
-    
-    for (tag in tags_texts) {
-      tab[ , tag] <- replace_tex_tags(tab[ , tag])
-    }
-    
-    
     ## Add BiBTeX Filename ----
     
     tab <- data.frame("filename" = files[j], tab)
     
     
-    ## Append References ----
+    ## Add missing columns ----
     
     pos <- which(!(tags %in% colnames(tab)))
     
@@ -206,6 +186,35 @@ read_bibtex <- function(path = ".",
         tab[ , tags[pos[i]]] <- NA
       }
     }
+    
+    
+    ## Remove LaTeX Tags ----
+    
+    tags_names <- c("author", "editor")
+    tags_names <- tags[tags %in% tags_names]
+    
+    if (length(tags_names)) {
+      for (tag in tags_names) {
+        tab[tag][[1]] <- lapply(tab[ , tag], replace_tex_tags)
+        tab[tag][[1]] <- unlist(lapply(tab[ , tag], function(x) {
+          paste0(unlist(x), collapse = " ; ")
+        }))
+      }
+    }
+    
+    
+    tags_texts <- c("title", "booktitle", "journal", "publisher", "abstract", 
+                    "keywords")
+    tags_texts <- tags[tags %in% tags_texts]
+    
+    if (length(tags_texts)) {
+      for (tag in tags_texts) {
+        tab[ , tag] <- replace_tex_tags(tab[ , tag])
+      }
+    }
+    
+    
+    ## Append References ----
     
     refs <- rbind(refs, tab[ , tags])
   }
@@ -223,16 +232,20 @@ read_bibtex <- function(path = ".",
   }
   
   
-  ## Add Unique Key ----
+  ## Order references ----
   
   refs <- refs[with(refs, order(filename, -year)), ]
   rownames(refs) <- NULL
   
+  
+  ## Add Unique Key ----
+  
   refs <- data.frame("noid" = 1:nrow(refs), refs)
   
   
-  ## Export as xlsx ----
+  ## Export as Excel file ----
   
+  filename <- gsub("\\.xls(x)?", "", filename)
   writexl::write_xlsx(refs, path = paste0(filename, ".xlsx"))
   
   refs

@@ -26,9 +26,9 @@ replace_tex_tags <- function(x) {
     stop("Argument 'x' is required.")
   }
   
-  if (!is.character(x)) { 
-    stop("Argument 'x' must be a character.")
-  }
+  # if (!is.character(x)) { 
+  #   stop("Argument 'x' must be a character.")
+  # }
   
   x <- gsub("\\{\\\\'\\{a\\}\\}", stri_unescape_unicode("\\u00e1"), x)
   x <- gsub("\\{\\\\'\\{e\\}\\}", stri_unescape_unicode("\\u00e9"), x)
