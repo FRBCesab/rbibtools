@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # rmendeley <img src="man/figures/hexsticker.png" height="120" align="right"/>
@@ -11,7 +12,7 @@ status](https://www.r-pkg.org/badges/version/rmendeley)](https://CRAN.R-project.
 [![LifeCycle](man/figures/lifecycle/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Project Status:
 Concept](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
-[![Dependencies](https://img.shields.io/badge/dependencies-0/0-brightgreen?style=flat)](#)
+[![Dependencies](https://img.shields.io/badge/dependencies-3/28-green?style=flat)](#)
 <!-- badges: end -->
 
 The goal of the R package `rmendeley` is to **{{ PLEASE ADD A FEW LINES
@@ -22,12 +23,16 @@ The goal of the R package `rmendeley` is to **{{ PLEASE ADD A FEW LINES
 You can install the development version from
 [GitHub](https://github.com/) with:
 
-    # install.packages("remotes")
-    remotes::install_github("FRBCesab/rmendeley")
+``` r
+# install.packages("remotes")
+remotes::install_github("FRBCesab/rmendeley")
+```
 
 Then you can attach the package `rmendeley`:
 
-    library("rmendeley")
+``` r
+library("rmendeley")
+```
 
 ## Overview
 
