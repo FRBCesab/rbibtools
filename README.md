@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![Website
+deployment](https://github.com/ahasverus/rmendeley/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/ahasverus/rmendeley/actions/workflows/pkgdown.yaml)
+[![R CMD
+Check](https://github.com/ahasverus/rmendeley/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ahasverus/rmendeley/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rmendeley)](https://CRAN.R-project.org/package=rmendeley)
 [![License: GPL (>=
