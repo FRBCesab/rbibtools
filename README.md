@@ -13,9 +13,9 @@ deployment](https://github.com/frbcesab/rmendeley/actions/workflows/pkgdown.yaml
 status](https://www.r-pkg.org/badges/version/rmendeley)](https://CRAN.R-project.org/package=rmendeley)
 [![License: GPL (>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
-[![LifeCycle](man/figures/lifecycle/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![LifeCycle](man/figures/lifecycle/lifecycle-stable.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![Project Status:
-Concept](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Dependencies](https://img.shields.io/badge/dependencies-3/28-green?style=flat)](#)
 <!-- badges: end -->
 
