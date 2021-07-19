@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rmendeley <img src="man/figures/hexsticker.png" height="120" align="right"/>
+# rmendeley
 
 <!-- badges: start -->
 
@@ -19,8 +19,9 @@ Concept](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repo
 [![Dependencies](https://img.shields.io/badge/dependencies-3/28-green?style=flat)](#)
 <!-- badges: end -->
 
-The goal of the R package `rmendeley` is to **{{ PLEASE ADD A FEW LINES
-}}**
+The goal of the R package `rmendeley` is to 1) read BiBTeX references
+exported by Mendeley, 2) clean metadata, and 3) export references as an
+Excel file.
 
 ## Installation
 
@@ -40,15 +41,14 @@ library("rmendeley")
 
 ## Overview
 
-Here is an overview of `rmendeley` content: **{{ PLEASE ADD A FEW LINES
-}}**
+The main function of `rmendeley` is `read_bibtex()`.
 
 ## Citation
 
 Please cite this package as:
 
-> Casajus Nicolas (2021) rmendeley: An R package to **{{ TITLE }}**. R
-> package version 0.0.0.9000.
+> Casajus Nicolas (2021) rmendeley: An R package to read BiBTeX
+> references exported by Mendeley. R package version 0.0.1.
 
 ## Code of Conduct
 

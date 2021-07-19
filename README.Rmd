@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 
 
-rmendeley <img src="man/figures/hexsticker.png" height="120" align="right"/>
+rmendeley
 =========================================================
 
 <!-- badges: start -->
@@ -30,7 +30,8 @@ rmendeley <img src="man/figures/hexsticker.png" height="120" align="right"/>
 <!-- badges: end -->
 
 
-The goal of the R package `rmendeley` is to **{{ PLEASE ADD A FEW LINES }}**
+The goal of the R package `rmendeley` is to 1) read BiBTeX references exported by 
+Mendeley, 2) clean metadata, and 3) export references as an Excel file.
 
 
 
@@ -53,7 +54,7 @@ library("rmendeley")
 
 ## Overview
 
-Here is an overview of `rmendeley` content: **{{ PLEASE ADD A FEW LINES }}**
+The main function of `rmendeley` is `read_bibtex()`.
 
 
 
@@ -62,7 +63,7 @@ Here is an overview of `rmendeley` content: **{{ PLEASE ADD A FEW LINES }}**
 Please cite this package as: 
 
 > Casajus Nicolas (`r format(Sys.Date(), "%Y")`) rmendeley: An R 
-package to **{{ TITLE }}**. R package version 0.0.0.9000.
+package to read BiBTeX references exported by Mendeley. R package version 0.0.1.
 
 
 

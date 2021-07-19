@@ -1,7 +1,7 @@
 Package: rmendeley
 Type: Package
-Title: The Title of the Project
-Version: 0.0.0.9000
+Title: Read BiBTeX references exported by Mendeley
+Version: 0.0.1
 Authors@R: c(
     person(given   = "Nicolas",
            family  = "Casajus",
