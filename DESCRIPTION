@@ -8,8 +8,8 @@ Authors@R: c(
            role    = c("aut", "cre"),
            email   = "nicolas.casajus@fondationbiodiversite.fr",
            comment = c(ORCID = "0000-0002-5537-5294")))
-Description: A paragraph providing a full description of the project (on several 
-    lines...)
+Description: Reads and cleans BiBTeX references exported by 
+    Mendeley (or others) and exports cleaned references as an Excel file.
 URL: https://github.com/FRBCesab/rmendeley
 BugReports: https://github.com/FRBCesab/rmendeley/issues
 License: GPL (>= 2)

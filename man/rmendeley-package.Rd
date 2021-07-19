@@ -4,10 +4,10 @@
 \name{rmendeley-package}
 \alias{rmendeley}
 \alias{rmendeley-package}
-\title{rmendeley: The Title of the Project}
+\title{rmendeley: Read BiBTeX references exported by Mendeley}
 \description{
-A paragraph providing a full description of the project (on several 
-    lines...)
+Reads and cleans BiBTeX references exported by 
+    Mendeley (or others) and exports cleaned references as an Excel file.
 }
 \seealso{
 Useful links:
