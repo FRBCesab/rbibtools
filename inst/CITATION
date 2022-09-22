@@ -1,10 +1,10 @@
-citHeader("To cite rmendeley in publications use:")
+citHeader("To cite rbibtools in publications use:")
 
 bibentry(
   bibtype = "Manual",
-  title   = "rmendeley: {An} {R} package to read BiBTeX references exported by Mendeley",
+  title   = "rbibtools: {A} {T}oolbox to {H}andle bib {F}iles",
   author  = c(person("Casajus Nicolas")),
-  year    = "2021",
+  year    = "2022",
   note    = "R package version 0.0.1",
-  url     = "https://github.com/FRBCesab/rmendeley"
+  url     = "https://github.com/FRBCesab/rbibtools"
 )

@@ -29,8 +29,9 @@ rbibtools  <img src="man/figures/hexsticker.png" align="right" style="float:righ
 <!-- badges: end -->
 
 
-The goal of the R package `rbibtools` is to 1) read BibTeX references exported by 
-Mendeley/Zotero, 2) clean metadata, and 3) export references as an Excel file.
+The R package `rbibtools` imports, cleans, and handles `.bib` files
+([BibTeX](https://www.bibtex.com/) references) exported by common references
+management software (e.g. Mendeley, Zotero).
 
 
 
@@ -53,7 +54,8 @@ library("rbibtools")
 
 ## Overview
 
-The main function of `rbibtools` is `read_bibtex()`.
+The main function of `rbibtools` is `read_bibtex()`. See the [Get started](https://frbcesab.github.io/rbibtools/articles/rbibtools.html) vignette for an
+overview of the package.
 
 
 
@@ -61,8 +63,8 @@ The main function of `rbibtools` is `read_bibtex()`.
 
 Please cite this package as: 
 
-> Casajus Nicolas (`r format(Sys.Date(), "%Y")`) rbibtools: An R 
-package to read BiBTeX references exported by Mendeley. R package version 0.0.1.
+> Casajus Nicolas (`r format(Sys.Date(), "%Y")`) rbibtools: A Toolbox to handle 
+bib files. R package version 0.0.1.
 
 
 
