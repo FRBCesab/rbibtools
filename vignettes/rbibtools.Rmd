@@ -1,8 +1,8 @@
 ---
-title: "Introduction to rmendeley"
+title: "Introduction to rbibtools"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to rmendeley}
+  %\VignetteIndexEntry{Introduction to rbibtools}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,6 +16,6 @@ knitr::opts_chunk$set(
 
 
 ```{r setup}
-library(rmendeley)
+library(rbibtools)
 ```
 

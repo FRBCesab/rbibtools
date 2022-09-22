@@ -1,27 +1,27 @@
-Package: rmendeley
+Package: rbibtools
 Type: Package
-Title: Read BiBTeX references exported by Mendeley
+Title: Toolbox to Handle bib Files
 Version: 0.0.1
 Authors@R: c(
     person(given   = "Nicolas",
            family  = "Casajus",
-           role    = c("aut", "cre"),
+           role    = c("aut", "cre", "cph"),
            email   = "nicolas.casajus@fondationbiodiversite.fr",
            comment = c(ORCID = "0000-0002-5537-5294")))
-Description: Reads and cleans BiBTeX references exported by 
-    Mendeley (or others) and exports cleaned references as an Excel file.
-URL: https://github.com/FRBCesab/rmendeley
-BugReports: https://github.com/FRBCesab/rmendeley/issues
+Description: Imports, cleans, and handles BibTeX references exported by 
+    references management softwares (e.g. Mendeley, Zotero).
+URL: https://github.com/FRBCesab/rbibtools
+BugReports: https://github.com/FRBCesab/rbibtools/issues
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 Imports: 
     bib2df,
-    stringi,
-    writexl
+    stringi
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    writexl
 VignetteBuilder: knitr
