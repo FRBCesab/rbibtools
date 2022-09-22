@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_bibtex.R
 \name{read_bibtex}
 \alias{read_bibtex}
-\title{Read BiBTeX references exported by Mendeley}
+\title{Import bib files and clean BibTeX references}
 \usage{
 read_bibtex(
   path = ".",
@@ -10,35 +10,36 @@ read_bibtex(
     "editor", "journal", "pages", "institution", "publisher", "doi", "url", "abstract",
     "keywords", "annote"),
   categories = NULL,
-  filename = NULL,
   pattern = NULL
 )
 }
 \arguments{
-\item{path}{the folder containing BiBTeX files to read.}
+\item{path}{a character of length 1. The name of the folder containing
+\code{.bib} files to read. All \code{.bib} files found in this folder will be
+imported.}
 
-\item{tags}{a vector of characters. BiBTeX fields to extract
-(e.g. author, year, etc.). See below \strong{Details} section.}
+\item{tags}{a vector of characters. BibTeX fields to extract
+(e.g. \code{"author"}, \code{"year"}, \code{"title"}, etc.). See \strong{Details} section.}
 
 \item{categories}{(optional) a vector of characters. Publications categories
-to import (e.g. article, book, etc.). See below \strong{Details} section.
+to import (e.g. \code{"article"}, \code{"book"}, etc.). See \strong{Details} section.
 Default is \code{NULL} (all publications will be retrieved).}
 
-\item{filename}{the name of the xlsx file to create.}
-
-\item{pattern}{(optional) a character used to select BiBTeX files. For
-instance, if all BiBTeX start with \strong{CESAB-} (i.e. \verb{CESAB-***.bib}) user
-can add \code{pattern = 'CESAB-'} to only read these BiBTeX files.}
+\item{pattern}{(optional) a vector of characters. This argument is used to
+select \code{.bib} files. For instance, if all \code{.bib} files start with
+\strong{CESAB-} (i.e. \verb{CESAB-***.bib}), user can add \code{pattern = 'CESAB-'} to
+only read these \code{.bib} files.}
 }
 \value{
-A data frame with BiBTeX fields in columns and references in rows.
+A \code{data.frame} with references fields in columns and references in
+rows.
 }
 \description{
-Reads BiBTeX references exported by Mendeley (or not) and stores metadata
-into a data frame using the function \code{\link[bib2df:bib2df]{bib2df::bib2df()}}.
+Imports \code{.bib} files and cleans BibTeX references using the function
+\code{\link[bib2df:bib2df]{bib2df::bib2df()}}.
 }
 \details{
-\strong{Valid tags values}:
+\strong{Valid \code{tags} values}:
 \itemize{
 \item \code{category}: type of publication
 \item \code{bibtexkey}: unique identifier of the publication
@@ -67,7 +68,7 @@ into a data frame using the function \code{\link[bib2df:bib2df]{bib2df::bib2df()
 \item \code{pmid}: PMID identifier
 }
 
-\strong{Valid categories values}:
+\strong{Valid \code{categories} values}:
 \itemize{
 \item \code{article}: scientific paper
 \item \code{book}: book
@@ -78,8 +79,6 @@ into a data frame using the function \code{\link[bib2df:bib2df]{bib2df::bib2df()
 }
 }
 \examples{
-\dontrun{
-refs <- read_bibtex(path = ".", filename = "~/Desktop/references", 
-                    pattern = "CESAB-")
-}
+path_to_bibs <- system.file("extdata", package = "rbibtools")
+refs <- read_bibtex(path = path_to_bibs)
 }

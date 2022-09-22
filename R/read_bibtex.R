@@ -1,28 +1,30 @@
-#' Read BiBTeX references exported by Mendeley
+#' Import bib files and clean BibTeX references
 #'
 #' @description
-#' Reads BiBTeX references exported by Mendeley (or not) and stores metadata 
-#' into a data frame using the function [bib2df::bib2df()].
+#' Imports `.bib` files and cleans BibTeX references using the function 
+#' [bib2df::bib2df()].
 #'   
-#' @param path the folder containing BiBTeX files to read.
+#' @param path a character of length 1. The name of the folder containing 
+#'   `.bib` files to read. All `.bib` files found in this folder will be 
+#'   imported.
 #' 
-#' @param tags a vector of characters. BiBTeX fields to extract 
-#'   (e.g. author, year, etc.). See below **Details** section.
+#' @param tags a vector of characters. BibTeX fields to extract
+#'   (e.g. `"author"`, `"year"`, `"title"`, etc.). See **Details** section.
 #'   
 #' @param categories (optional) a vector of characters. Publications categories
-#'   to import (e.g. article, book, etc.). See below **Details** section.
+#'   to import (e.g. `"article"`, `"book"`, etc.). See **Details** section.
 #'   Default is `NULL` (all publications will be retrieved).
 #' 
-#' @param filename the name of the xlsx file to create.
-#' 
-#' @param pattern (optional) a character used to select BiBTeX files. For 
-#'   instance, if all BiBTeX start with **CESAB-** (i.e. `CESAB-***.bib`) user 
-#'   can add `pattern = 'CESAB-'` to only read these BiBTeX files.
+#' @param pattern (optional) a vector of characters. This argument is used to 
+#'   select `.bib` files. For instance, if all `.bib` files start with 
+#'   **CESAB-** (i.e. `CESAB-***.bib`), user can add `pattern = 'CESAB-'` to 
+#'   only read these `.bib` files.
 #'
-#' @return A data frame with BiBTeX fields in columns and references in rows.
+#' @return A `data.frame` with references fields in columns and references in 
+#'   rows.
 #' 
 #' @details 
-#' **Valid tags values**:
+#' **Valid `tags` values**:
 #' 
 #' - `category`: type of publication
 #' - `bibtexkey`: unique identifier of the publication
@@ -51,7 +53,7 @@
 #' - `pmid`: PMID identifier
 #' 
 #' 
-#' **Valid categories values**:
+#' **Valid `categories` values**:
 #' 
 #' - `article`: scientific paper
 #' - `book`: book
@@ -63,10 +65,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' refs <- read_bibtex(path = ".", filename = "~/Desktop/references", 
-#'                     pattern = "CESAB-")
-#' }
+#' path_to_bibs <- system.file("extdata", package = "rbibtools")
+#' refs <- read_bibtex(path = path_to_bibs)
 
 read_bibtex <- function(path = ".", 
                         tags = c("bibtexkey", "category", "author", "title", 
@@ -74,13 +74,13 @@ read_bibtex <- function(path = ".",
                                  "journal", "pages", "institution", "publisher",
                                  "doi", "url", "abstract", "keywords", 
                                  "annote"), 
-                        categories  = NULL, filename = NULL, pattern = NULL) {
+                        categories  = NULL, pattern = NULL) {
   
   
   ## Checks ----
   
   if (!dir.exists(path)) {
-    stop("The folder 'path' does not exist.")
+    stop("The folder 'path' does not exist", call. = FALSE)
   }
   
   if (!is.null(pattern)) {
@@ -89,7 +89,7 @@ read_bibtex <- function(path = ".",
     pattern_check <- unlist(strsplit(pattern, ""))
     
     if (any(pattern_check %in% special_chars)) {
-      stop("Special characters are not allowed in 'pattern'.")
+      stop("Special characters are not allowed in 'pattern'", call. = FALSE)
     }
     
   } else {
@@ -106,7 +106,8 @@ read_bibtex <- function(path = ".",
                           "phdthesis", "techreport")
     
     if (any(!(categories %in% valid_categories))) {
-      stop("Invalid publication category (argument 'categories').")
+      stop("Invalid publication category (argument 'categories')", 
+           call. = FALSE)
     }
   }
   
@@ -122,27 +123,17 @@ read_bibtex <- function(path = ".",
                     "keywords", "url", "isbn", "pmid")
     
     if (any(!(tags %in% valid_tags))) {
-      stop("Invalid publication tag (argument 'tags').")
+      stop("Invalid publication tag (argument 'tags')", call. = FALSE)
     }
   }
   
   
-  if (is.null(filename)) {
-    stop("Argument 'filename' is required.")
-  }
-  
-  if (!is.character(filename) || length(filename) != 1) {
-    stop("Argument 'filename' must be a character of length 1.")
-  }
-  
-  
-  
-  ## List BiBTeX files ----
+  ## List BibTeX files ----
   
   files <- list.files(path, pattern = paste0("^", pattern, ".*\\.bib$"))
   
   if (!length(files)) { 
-    stop("No BiBTeX was found in '", path, "'.")
+    stop("No BiBTeX was found in '", path, "'", call. = FALSE)
   }
   
   
@@ -162,7 +153,7 @@ read_bibtex <- function(path = ".",
   for (j in 1:length(files)) {
     
     
-    ## Import BiBTeX File <j> ----
+    ## Import BibTeX file name <j> ----
     
     tab <- suppressMessages(bib2df::bib2df(file.path(path, files[j])))
     tab <- as.data.frame(tab)
@@ -170,7 +161,7 @@ read_bibtex <- function(path = ".",
     colnames(tab) <- tolower(colnames(tab))
     
     
-    ## Add BiBTeX Filename ----
+    ## Add BibTeX file name ----
     
     tab <- data.frame("filename" = files[j], tab)
     
@@ -188,7 +179,7 @@ read_bibtex <- function(path = ".",
     }
     
     
-    ## Remove LaTeX Tags ----
+    ## Remove LaTeX Tags in lists ----
     
     tags_names <- c("author", "editor")
     tags_names <- tags[tags %in% tags_names]
@@ -199,9 +190,12 @@ read_bibtex <- function(path = ".",
         tab[tag][[1]] <- unlist(lapply(tab[ , tag], function(x) {
           paste0(unlist(x), collapse = " ; ")
         }))
+        tab[ , tag] <- gsub("\\{|\\}", "", tab[ , tag])
       }
     }
     
+    
+    ## Remove LaTeX Tags in vectors ----
     
     tags_texts <- c("title", "booktitle", "journal", "publisher", "abstract", 
                     "keywords")
@@ -210,6 +204,7 @@ read_bibtex <- function(path = ".",
     if (length(tags_texts)) {
       for (tag in tags_texts) {
         tab[ , tag] <- replace_tex_tags(tab[ , tag])
+        tab[ , tag] <- gsub("\\{|\\}", "", tab[ , tag])
       }
     }
     
@@ -241,12 +236,6 @@ read_bibtex <- function(path = ".",
   ## Add Unique Key ----
   
   refs <- data.frame("noid" = 1:nrow(refs), refs)
-  
-  
-  ## Export as Excel file ----
-  
-  filename <- gsub("\\.xls(x)?", "", filename)
-  writexl::write_xlsx(refs, path = paste0(filename, ".xlsx"))
   
   refs
 }
