@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rbibtools <img src="man/figures/hexsticker.png" height="120" align="right"/>
+# rbibtools <img src="man/figures/hexsticker.png" align="right" style="float:right; height:120px;"/>
 
 <!-- badges: start -->
 
@@ -13,10 +13,9 @@ deployment](https://github.com/frbcesab/rbibtools/actions/workflows/pkgdown.yaml
 status](https://www.r-pkg.org/badges/version/rbibtools)](https://CRAN.R-project.org/package=rbibtools)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
-[![LifeCycle](man/figures/lifecycle/lifecycle-stable.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![LifeCycle](https://img.shields.io/badge/lifecycle-experimental-orange)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Project Status:
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Dependencies](https://img.shields.io/badge/dependencies-3/28-green?style=flat)](#)
 <!-- badges: end -->
 
 The goal of the R package `rbibtools` is to 1) read BibTeX references
