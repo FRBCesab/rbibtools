@@ -15,7 +15,14 @@ knitr::opts_chunk$set(
 ```
 
 
+## Usage
+
 ```{r setup}
 library(rbibtools)
+
+path_to_bibs <- system.file("extdata", package = "rbibtools")
+refs <- read_bibtex(path = path_to_bibs)
+
+knitr::kable(refs[ , 1:8])
 ```
 
