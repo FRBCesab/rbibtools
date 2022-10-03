@@ -25,9 +25,12 @@
     <loc>/reference/rbibtools-package.html</loc>
   </url>
   <url>
-    <loc>/reference/read_bibtex.html</loc>
+    <loc>/reference/read_bib.html</loc>
   </url>
   <url>
     <loc>/reference/replace_tex_tags.html</loc>
+  </url>
+  <url>
+    <loc>/reference/write_bib.html</loc>
   </url>
 </urlset>

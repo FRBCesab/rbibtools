@@ -80,25 +80,26 @@
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/FRBCesab/rbibtools" class="external-link">rbibtools</a></span><span class="op">)</span></span>
-<span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/FRBCesab/rbibtools" class="external-link">rbibtools</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Import bib files ----</span></span>
 <span><span class="va">path_to_bibs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"rbibtools"</span><span class="op">)</span></span>
-<span><span class="va">refs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_bibtex.html">read_bibtex</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">path_to_bibs</span><span class="op">)</span></span>
+<span><span class="va">refs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_bib.html">read_bib</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">path_to_bibs</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: `as_data_frame()` was deprecated in tibble 2.0.0.</span></span>
 <span><span class="co">#&gt; Please use `as_tibble()` instead.</span></span>
-<span><span class="co">#&gt; The signature and semantics have changed, see `?as_tibble`.</span></span>
-<span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">refs</span><span class="op">[</span> , <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; The signature and semantics have changed, see `?as_tibble`.</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">refs</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <table style="width:100%;" class="table">
 <colgroup>
 <col width="0%">
-<col width="1%">
+<col width="2%">
 <col width="2%">
 <col width="1%">
-<col width="66%">
-<col width="25%">
+<col width="75%">
+<col width="16%">
 <col width="0%">
-<col width="0%">
+<col width="1%">
 </colgroup>
 <thead><tr class="header">
 <th align="right">noid</th>
@@ -151,198 +152,10 @@
 <td align="right">2021</td>
 <td align="left">9</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">references.bib</td>
-<td align="left">wilson2021</td>
-<td align="left">article</td>
-<td align="left">Wilson, J. Keaton ; Casajus, Nicolas ; Hutchinson, Rebecca A. ; McFarland, Kent P. ; Kerr, Jeremy T. ; Berteaux, Dominique ; Larrivée, Maxim ; Prudic, Kathleen L.</td>
-<td align="left">Climate change and local host availability drive the northern range boundary in the rapid expansion of a specialist insect herbivore, Papilio cresphontes</td>
-<td align="right">2021</td>
-<td align="left">9</td>
-</tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">references.bib</td>
-<td align="left">loiseau2010</td>
-<td align="left">article</td>
-<td align="left">Loiseau, Nicolas ; Mouquet, Nicolas ; Casajus, Nicolas ; Grenié, Matthias ; Guéguen, Maya ; Maitner, Brian ; Mouillot, David ; Ostling, Annette ; Renaud, Julien ; Tucker, Caroline ; Velez, Laure ; Thuiller, Wilfried ; Violle, Cyrille</td>
-<td align="left">Global distribution and conservation status of ecologically rare mammal and bird species</td>
-<td align="right">2020</td>
-<td align="left">11</td>
-</tr>
-<tr class="odd">
-<td align="right">7</td>
-<td align="left">references.bib</td>
-<td align="left">devost2019</td>
-<td align="left">article</td>
-<td align="left">Devost, Eric ; Lai, Sandra ; Casajus, Nicolas ; Berteaux, Dominique</td>
-<td align="left">FoxMask: A new automated tool for animal detection in camera trap images</td>
-<td align="right">2019</td>
-<td align="left">NA</td>
-</tr>
-<tr class="even">
-<td align="right">8</td>
-<td align="left">references.bib</td>
-<td align="left">berteaux2018</td>
-<td align="left">article</td>
-<td align="left">Berteaux, Dominique ; Ricard, Marylène ; St-Laurent, Martin-Hugues ; Casajus, Nicolas ; Périé, Catherine ; Beauregard, Frieda de Blois, Sylvie</td>
-<td align="left">Northern protected areas will become important refuges for biodiversity tracking suitable climates</td>
-<td align="right">2018</td>
-<td align="left">8</td>
-</tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="left">references.bib</td>
-<td align="left">gendreau2018</td>
-<td align="left">article</td>
-<td align="left">Gendreau, Yanick ; Lachance, Audrey ; Ricard, Marylène ; Gilbert, Hélène ; Casajus, Nicolas ; Berteaux, Dominique</td>
-<td align="left">Changements climatiques : Défis et perspectives pour les plantes vasculaires en situation précaire au Québec</td>
-<td align="right">2018</td>
-<td align="left">142</td>
-</tr>
-<tr class="even">
-<td align="right">10</td>
-<td align="left">references.bib</td>
-<td align="left">lamarre2018</td>
-<td align="left">article</td>
-<td align="left">Lamarre, Vincent ; Legagneux, Pierre ; Franke, Alastair ; Casajus, Nicolas ; Currie, Douglas C. ; Berteaux, Dominique ; Bêty, Joël</td>
-<td align="left">Precipitation and ectoparasitism reduce reproductive success in an arctic-nesting top-predator</td>
-<td align="right">2018</td>
-<td align="left">8</td>
-</tr>
-<tr class="odd">
-<td align="right">11</td>
-<td align="left">references.bib</td>
-<td align="left">legagneux2018</td>
-<td align="left">article</td>
-<td align="left">Legagneux, Pierre ; Casajus, Nicolas ; Cazelles, Kevin ; Chevallier, Clément ; Chevrinais, Marion ; Guéry, Lorelei ; Jacquet, Claire ; Jaffré, Mikael ; Naud, Marie-José ; Noisette, Fanny ; Ropars, Pascale ; Vissault, Steve ; Archambault, Philippe ; Bêty, Joël ; Berteaux, Dominique ; Gravel, Dominique</td>
-<td align="left">Our house is burning: Discrepancy in climate change vs. biodiversity coverage in the media as compared to scientific literature</td>
-<td align="right">2018</td>
-<td align="left">5</td>
-</tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="left">references.bib</td>
-<td align="left">wang2018</td>
-<td align="left">article</td>
-<td align="left">Wang, Yifu ; Casajus, Nicolas ; Buddle, Christopher ; Berteaux, Dominique ; Larrivée, Maxim</td>
-<td align="left">Predicting the distribution of poorly-documented species, Northern black widow (Latrodectus variolus) and Black purse-web spider (Sphodros niger), using museum specimens and citizen science data</td>
-<td align="right">2018</td>
-<td align="left">13</td>
-</tr>
-<tr class="odd">
-<td align="right">13</td>
-<td align="left">references.bib</td>
-<td align="left">berteaux2017</td>
-<td align="left">article</td>
-<td align="left">Berteaux, Dominique ; Casajus, Nicolas ; Angerbjörn, Anders ; Fuglei, Eva</td>
-<td align="left">Foreword to Supplement 1: Research on a polar species — The Arctic fox</td>
-<td align="right">2017</td>
-<td align="left">36</td>
-</tr>
-<tr class="even">
-<td align="right">14</td>
-<td align="left">references.bib</td>
-<td align="left">rioux2017</td>
-<td align="left">article</td>
-<td align="left">Rioux, Marie-Jeanne ; Lai, Sandra ; Casajus, Nicolas ; Bêty, Joël ; Berteaux, Dominique</td>
-<td align="left">Winter home range fidelity and extraterritorial movements of Arctic fox pairs in the Canadian High Arctic</td>
-<td align="right">2017</td>
-<td align="left">36</td>
-</tr>
-<tr class="odd">
-<td align="right">15</td>
-<td align="left">references.bib</td>
-<td align="left">casajus2016</td>
-<td align="left">article</td>
-<td align="left">Casajus, Nicolas ; Périé, Catherine ; Logan, Travis ; Lambert, Marie-Claude ; de Blois, Sylvie ; Berteaux, Dominique</td>
-<td align="left">An Objective approach to select climate scenarios when projecting species distribution under climate change</td>
-<td align="right">2016</td>
-<td align="left">11</td>
-</tr>
-<tr class="even">
-<td align="right">16</td>
-<td align="left">references.bib</td>
-<td align="left">berteaux2014</td>
-<td align="left">book</td>
-<td align="left">Berteaux, Dominique ; Casajus, Nicolas ; de Blois, Sylvie</td>
-<td align="left">Changements climatiques et biodiversité du Québec: Vers un nouveau patrimoine naturel</td>
-<td align="right">2014</td>
-<td align="left">NA</td>
-</tr>
-<tr class="odd">
-<td align="right">17</td>
-<td align="left">references.bib</td>
-<td align="left">bolduc2013</td>
-<td align="left">article</td>
-<td align="left">Bolduc, Élise ; Casajus, Nicolas ; Legagneux, Pierre ; McKinnon, Laura ; Gilchrist, H. Grant ; Leung, Maria ; Morrison, R. I. Guy ; Reid, Donald G. ; Smith, Paul A. ; Buddle, Christopher M. ; Bêty, Joël</td>
-<td align="left">Terrestrial arthropod abundance and phenology in the Canadian Arctic: Modelling resource availability for Arctic-nesting insectivorous birds</td>
-<td align="right">2013</td>
-<td align="left">145</td>
-</tr>
-<tr class="even">
-<td align="right">18</td>
-<td align="left">references.bib</td>
-<td align="left">chambers2013</td>
-<td align="left">article</td>
-<td align="left">Chambers, Dominic ; Périé, Catherine ; Casajus, Nicolas ; de Blois, Sylvie</td>
-<td align="left">Challenges in modelling the abundance of 105 tree species in eastern North America using climate, edaphic, and topographic variables</td>
-<td align="right">2013</td>
-<td align="left">291</td>
-</tr>
-<tr class="odd">
-<td align="right">19</td>
-<td align="left">references.bib</td>
-<td align="left">sarasa2012</td>
-<td align="left">article</td>
-<td align="left">Sarasa, Mathieu ; Soriguer, Ramón C. ; Granados, José-Enrique ; Casajus, Nicolas ; Pérez, Jesús M.</td>
-<td align="left">Mismeasure of secondary sexual traits: An example with horn growth in the Iberian ibex</td>
-<td align="right">2012</td>
-<td align="left">288</td>
-</tr>
-<tr class="even">
-<td align="right">20</td>
-<td align="left">references.bib</td>
-<td align="left">grenouillet2011</td>
-<td align="left">article</td>
-<td align="left">Grenouillet, Gaël ; Buisson, Laëtitia ; Casajus, Nicolas ; Lek, Sovan</td>
-<td align="left">Ensemble modelling of species distribution: The effects of geographical and environmental ranges</td>
-<td align="right">2011</td>
-<td align="left">34</td>
-</tr>
-<tr class="odd">
-<td align="right">21</td>
-<td align="left">references.bib</td>
-<td align="left">berteaux2010</td>
-<td align="left">article</td>
-<td align="left">Berteaux, Dominique ; de Blois, Sylvie ; Angers, Jean-François ; Bonin, Joël ; Casajus, Nicolas ; Darveau, Marcel ; Fournier, François ; Humphries, Murray M. ; McGill, Brian ; Larivée, Jacques ; Logan, Travis ; Nantel, Patrick ; Périé, Catherine ; Poisson, Frédéric ; Rodrigue, David ; Rouleau, Sébastien ; Siron, Robert ; Thuiller, Wilfried ; Vescovi, Luc</td>
-<td align="left">The CC-Bio Project: Studying the effects of climate change on Quebec biodiversity</td>
-<td align="right">2010</td>
-<td align="left">2</td>
-</tr>
-<tr class="even">
-<td align="right">22</td>
-<td align="left">references.bib</td>
-<td align="left">buisson2010a</td>
-<td align="left">incollection</td>
-<td align="left">Buisson, Laëtitia ; Grenouillet, Gaël ; Casajus, Nicolas ; Lek, Sovan</td>
-<td align="left">Predicting the potential impacts of climate change on stream fish assemblages</td>
-<td align="right">2010</td>
-<td align="left">NA</td>
-</tr>
-<tr class="odd">
-<td align="right">23</td>
-<td align="left">references.bib</td>
-<td align="left">buisson2010b</td>
-<td align="left">article</td>
-<td align="left">Buisson, Laëtitia ; Thuiller, Wilfried ; Casajus, Nicolas ; Lek, Sovan ; Grenouillet, GaëL</td>
-<td align="left">Uncertainty in ensemble forecasting of species distribution</td>
-<td align="right">2010</td>
-<td align="left">16</td>
-</tr>
 </tbody>
 </table>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">rbibtools</span><span class="fu">::</span><span class="fu"><a href="../reference/write_bib.html">write_bib</a></span><span class="op">(</span><span class="va">refs</span>, file <span class="op">=</span> <span class="st">"references.bib"</span><span class="op">)</span></span></code></pre></div>
 </div>
   </div>
 
