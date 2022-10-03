@@ -66,15 +66,15 @@
 #'
 #' @examples
 #' path_to_bibs <- system.file("extdata", package = "rbibtools")
-#' refs <- read_bibtex(path = path_to_bibs)
+#' refs <- read_bib(path = path_to_bibs)
 
-read_bibtex <- function(path = ".", 
-                        tags = c("bibtexkey", "category", "author", "title", 
-                                 "year", "volume", "booktitle","editor", 
-                                 "journal", "pages", "institution", "publisher",
-                                 "doi", "url", "abstract", "keywords", 
-                                 "annote"), 
-                        categories  = NULL, pattern = NULL) {
+read_bib <- function(path = ".", 
+                     tags = c("bibtexkey", "category", "author", "title", 
+                              "year", "volume", "booktitle","editor", 
+                              "journal", "pages", "institution", "publisher",
+                              "doi", "url", "abstract", "keywords", 
+                              "annote"), 
+                     categories  = NULL, pattern = NULL) {
   
   
   ## Checks ----

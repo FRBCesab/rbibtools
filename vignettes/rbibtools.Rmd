@@ -19,10 +19,19 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(rbibtools)
+```
 
+```{r 'import'}
+## Import bib files ----
 path_to_bibs <- system.file("extdata", package = "rbibtools")
-refs <- read_bibtex(path = path_to_bibs)
+refs <- read_bib(path = path_to_bibs)
+```
 
-knitr::kable(refs[ , 1:8])
+```{r 'preview'}
+knitr::kable(refs[1:4, 1:8])
+```
+
+```{r 'export', eval = FALSE}
+rbibtools::write_bib(refs, file = "references.bib")
 ```
 
