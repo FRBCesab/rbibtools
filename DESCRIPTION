@@ -8,7 +8,7 @@ Authors@R: c(
            role    = c("aut", "cre", "cph"),
            email   = "nicolas.casajus@fondationbiodiversite.fr",
            comment = c(ORCID = "0000-0002-5537-5294")))
-Description: Imports, cleans, and handles BibTeX references exported by 
+Description: Imports, cleans, and exports BibTeX references exported by 
     references management softwares (e.g. Mendeley, Zotero).
 URL: https://github.com/FRBCesab/rbibtools
 BugReports: https://github.com/FRBCesab/rbibtools/issues

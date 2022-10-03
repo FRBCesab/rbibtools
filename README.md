@@ -18,7 +18,7 @@ status](https://www.r-pkg.org/badges/version/rbibtools)](https://CRAN.R-project.
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- badges: end -->
 
-The R package `rbibtools` imports, cleans, and handles `.bib` files
+The R package `rbibtools` imports, cleans, and exports `.bib` files
 ([BibTeX](https://www.bibtex.com/) references) exported by common
 references management software (e.g. Mendeley, Zotero).
 
@@ -40,7 +40,8 @@ library("rbibtools")
 
 ## Overview
 
-The main function of `rbibtools` is `read_bibtex()`. See the [Get
+The main functions of `rbibtools` are `read_bib()` and `write_bib()`.
+See the [Get
 started](https://frbcesab.github.io/rbibtools/articles/rbibtools.html)
 vignette for an overview of the package.
 
