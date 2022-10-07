@@ -229,7 +229,7 @@ read_bib <- function(path = ".",
   
   ## Order references ----
   
-  refs <- refs[with(refs, order(filename, -year)), ]
+  #refs <- refs[with(refs, order(filename, -year)), ] # Bug to fix if missing year
   rownames(refs) <- NULL
   
   
