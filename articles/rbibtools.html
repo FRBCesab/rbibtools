@@ -86,8 +86,10 @@
 <span><span class="va">path_to_bibs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"rbibtools"</span><span class="op">)</span></span>
 <span><span class="va">refs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_bib.html">read_bib</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">path_to_bibs</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: `as_data_frame()` was deprecated in tibble 2.0.0.</span></span>
-<span><span class="co">#&gt; Please use `as_tibble()` instead.</span></span>
-<span><span class="co">#&gt; The signature and semantics have changed, see `?as_tibble`.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `as_tibble()` instead.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The signature and semantics have changed, see `?as_tibble`.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">bib2df</span> package.</span></span>
+<span><span class="co">#&gt;   Please report the issue to the authors.</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">refs</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <table style="width:100%;" class="table">
@@ -96,8 +98,8 @@
 <col width="2%">
 <col width="2%">
 <col width="1%">
-<col width="75%">
-<col width="16%">
+<col width="70%">
+<col width="19%">
 <col width="0%">
 <col width="1%">
 </colgroup>
@@ -115,42 +117,42 @@
 <tr class="odd">
 <td align="right">1</td>
 <td align="left">references.bib</td>
-<td align="left">langlois2022</td>
+<td align="left">berteaux2010</td>
 <td align="left">article</td>
-<td align="left">Langlois, Juliette ; Guilhaumon, François ; Baletaud, Florian ; Casajus, Nicolas ; de Almeida Braga, Cédric ; Fleuré, Valentine ; Kulbicki, Michel ; Loiseau, Nicolas ; Mouillot, David ; Renoult, Julien P. ; Stahl, Alinéor ; Stuart-Smith, Rick D. ; Tribot, Anne-Sophie ; Mouquet, Nicolas</td>
-<td align="left">The Aesthetic value of reef fishes is globally mismatched to their conservation priorities</td>
-<td align="right">2022</td>
-<td align="left">20</td>
+<td align="left">Berteaux, Dominique ; de Blois, Sylvie ; Angers, Jean-François ; Bonin, Joël ; Casajus, Nicolas ; Darveau, Marcel ; Fournier, François ; Humphries, Murray M. ; McGill, Brian ; Larivée, Jacques ; Logan, Travis ; Nantel, Patrick ; Périé, Catherine ; Poisson, Frédéric ; Rodrigue, David ; Rouleau, Sébastien ; Siron, Robert ; Thuiller, Wilfried ; Vescovi, Luc</td>
+<td align="left">The CC-Bio Project: Studying the effects of climate change on Quebec biodiversity</td>
+<td align="right">2010</td>
+<td align="left">2</td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
 <td align="left">references.bib</td>
-<td align="left">magneville2021</td>
-<td align="left">article</td>
-<td align="left">Magneville, Camille ; Loiseau, Nicolas ; Albouy, Camille ; Casajus, Nicolas ; Claverie, Thomas ; Escalas, Arthur ; Leprieur, Fabien ; Maire, Eva ; Mouillot, David ; Villéger, Sébastien</td>
-<td align="left">mFD: An R package to compute and illustrate the multiple facets of functional diversity</td>
-<td align="right">2021</td>
-<td align="left">44</td>
+<td align="left">berteaux2014</td>
+<td align="left">book</td>
+<td align="left">Berteaux, Dominique ; Casajus, Nicolas ; de Blois, Sylvie</td>
+<td align="left">Changements climatiques et biodiversité du Québec: Vers un nouveau patrimoine naturel</td>
+<td align="right">2014</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
 <td align="left">references.bib</td>
-<td align="left">monnet2021</td>
+<td align="left">berteaux2017</td>
 <td align="left">article</td>
-<td align="left">Monnet, Anne-Christine ; Cilleros, Kévin ; Médail, Frédéric ; Cheikh Albassatneh, Marwan ; Arroyo, Juan ; Bacchetta, Gianluigi ; Bagnoli, Francesca ; Barina, Zoltán ; Cartereau, Manuel ; Casajus, Nicolas ; Dimopoulos, Panayotis ; Domina, Gianniantonio ; Doxa, Aggeliki ; Escudero, Marcial ; Fady, Bruno ; Hampe, Arndt ; Matevski, Vlado ; Misfud, Stephen ; Nikolic, Toni ; Pavon, Daniel ; Roig, Anne ; Barea, Estefania Santos ; Spanu, Ilaria ; Strid, Arne ; Vendramin, Giovanni Giuseppe ; Leriche, Agathe</td>
-<td align="left">WOODIV, A database of occurrences, functional traits, and phylogenetic data for all Euro-Mediterranean trees</td>
-<td align="right">2021</td>
-<td align="left">8</td>
+<td align="left">Berteaux, Dominique ; Casajus, Nicolas ; Angerbjörn, Anders ; Fuglei, Eva</td>
+<td align="left">Foreword to Supplement 1: Research on a polar species — The Arctic fox</td>
+<td align="right">2017</td>
+<td align="left">36</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
 <td align="left">references.bib</td>
-<td align="left">mouillot2021</td>
+<td align="left">berteaux2018</td>
 <td align="left">article</td>
-<td align="left">Mouillot, David ; Loiseau, Nicolas ; Grenié, Matthias ; Algar, Adam C. ; Allegra, Michele ; Cadotte, Marc W. ; Casajus, Nicolas ; Denelle, Pierre ; Guéguen, Maya ; Maire, Anthony ; Maitner, Brian ; McGill, Brian J. ; McLean, Matthew ; Mouquet, Nicolas ; Munoz, François ; Thuiller, Wilfried ; Villéger, Sébastien ; Violle, Cyrille ; Auber, Arnaud</td>
-<td align="left">The Dimensionality and structure of species trait spaces</td>
-<td align="right">2021</td>
-<td align="left">9</td>
+<td align="left">Berteaux, Dominique ; Ricard, Marylène ; St-Laurent, Martin-Hugues ; Casajus, Nicolas ; Périé, Catherine ; Beauregard, Frieda de Blois, Sylvie</td>
+<td align="left">Northern protected areas will become important refuges for biodiversity tracking suitable climates</td>
+<td align="right">2018</td>
+<td align="left">8</td>
 </tr>
 </tbody>
 </table>

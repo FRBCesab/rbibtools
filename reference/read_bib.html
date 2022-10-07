@@ -138,8 +138,10 @@ rows.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">path_to_bibs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"rbibtools"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">refs</span> <span class="op">&lt;-</span> <span class="fu">read_bib</span><span class="op">(</span>path <span class="op">=</span> <span class="va">path_to_bibs</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`as_data_frame()` was deprecated in tibble 2.0.0.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Please use `as_tibble()` instead.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> The signature and semantics have changed, see `?as_tibble`.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Please use `as_tibble()` instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> The signature and semantics have changed, see `?as_tibble`.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">bib2df</span> package.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>   Please report the issue to the authors.</span>
 </code></pre></div>
     </div>
   </div>
