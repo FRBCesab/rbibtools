@@ -7,20 +7,27 @@
 
 [![R CMD
 Check](https://github.com/frbcesab/rbibtools/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/rbibtools/actions/workflows/R-CMD-check.yaml)
-[![Website
-deployment](https://github.com/frbcesab/rbibtools/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/rbibtools/actions/workflows/pkgdown.yaml)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/rbibtools)](https://CRAN.R-project.org/package=rbibtools)
+[![Website](https://github.com/frbcesab/rbibtools/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/rbibtools/actions/workflows/pkgdown.yaml)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
-[![LifeCycle](https://img.shields.io/badge/lifecycle-experimental-orange)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![Project Status:
-Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- badges: end -->
 
-The R package `rbibtools` imports, cleans, and exports `.bib` files
-([BibTeX](https://www.bibtex.com/) references) exported by common
-references management software (e.g. Mendeley, Zotero).
+## Table of contents
+
+<p align="left">
+• <a href="#overview">Overview</a><br> •
+<a href="#installation">Installation</a><br> •
+<a href="#get-started">Get started</a><br> •
+<a href="#citation">Citation</a><br> •
+<a href="#contributing">Contributing</a>
+</p>
+
+## Overview
+
+The R package `rbibtools` has been developed to import, clean, and
+export `.bib` files ([BibTeX](https://www.bibtex.com/) references)
+exported by common references management software (e.g. Mendeley,
+Zotero).
 
 ## Installation
 
@@ -38,7 +45,7 @@ Then you can attach the package `rbibtools`:
 library("rbibtools")
 ```
 
-## Overview
+## Get started
 
 The main functions of `rbibtools` are `read_bib()` and `write_bib()`.
 See the [Get
@@ -49,12 +56,16 @@ vignette for an overview of the package.
 
 Please cite this package as:
 
-> Casajus Nicolas (2022) rbibtools: A Toolbox to handle bib files. R
-> package version 0.0.1.
+> Casajus Nicolas (2024) rbibtools: A toolbox to handle BibTeX files. R
+> package version 0.0.1. <https://github.com/FRBCesab/rbibtools>
 
-## Code of Conduct
+## Contributing
+
+All types of contributions are encouraged and valued. For more
+information, check out our [Contributor
+Guidelines](https://github.com/FRBCesab/rbibtools/blob/main/CONTRIBUTING.md).
 
 Please note that the `rbibtools` project is released with a [Contributor
 Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.

@@ -4,9 +4,9 @@
 \name{rbibtools-package}
 \alias{rbibtools}
 \alias{rbibtools-package}
-\title{rbibtools: Toolbox to Handle bib Files}
+\title{rbibtools: Toolbox to Handle BibTeX Files}
 \description{
-Imports, cleans, and handles BibTeX references exported by references management softwares (e.g. Mendeley, Zotero).
+Imports, cleans, and exports BibTeX references exported by references management softwares (e.g. Mendeley, Zotero).
 }
 \seealso{
 Useful links:
@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr} (\href{https://orcid.org/0000-0002-5537-5294}{ORCID}) [copyright holder]
+\strong{Maintainer}: Nicolas Casajus \email{rdev.nc@gmail.com} (\href{https://orcid.org/0000-0002-5537-5294}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}
